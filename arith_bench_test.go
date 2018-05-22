@@ -108,7 +108,7 @@ func BenchmarkVanillaVecDiv(b *testing.B) {
 
 func _vanillaVecSqrt(a []float32) {
 	for i, v := range a {
-		a[i] = math32.Sqrt(v)
+		a[i] = math32.MobileSqrt(v)
 	}
 }
 
@@ -130,7 +130,7 @@ func BenchmarkVanillaVecSqrt(b *testing.B) {
 
 func _vanillaVecInverseSqrt(a []float32) {
 	for i, v := range a {
-		a[i] = 1.0 / math32.Sqrt(v)
+		a[i] = 1.0 / math32.MobileSqrt(v)
 	}
 }
 

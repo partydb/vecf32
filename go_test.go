@@ -72,7 +72,7 @@ func TestSqrt(t *testing.T) {
 
 	correct := Range(0, niceprime-1)
 	for i, v := range correct {
-		correct[i] = math32.Sqrt(v)
+		correct[i] = math32.MobileSqrt(v)
 	}
 	Sqrt(a)
 	assert.Equal(correct, a)
@@ -100,7 +100,7 @@ func TestSqrt(t *testing.T) {
 		if testAlign {
 			correct = make([]float32, i)
 			for j := range correct {
-				correct[j] = math32.Sqrt(a[j])
+				correct[j] = math32.MobileSqrt(a[j])
 			}
 			Sqrt(a)
 			assert.Equal(correct, a)
@@ -115,7 +115,7 @@ func TestInvSqrt(t *testing.T) {
 
 	correct := Range(0, niceprime-1)
 	for i, v := range correct {
-		correct[i] = 1.0 / math32.Sqrt(v)
+		correct[i] = 1.0 / math32.MobileSqrt(v)
 	}
 	InvSqrt(a)
 	assert.Equal(correct[1:], a[1:])
@@ -137,7 +137,7 @@ func TestInvSqrt(t *testing.T) {
 		if testAlign {
 			correct = make([]float32, i)
 			for j := range correct {
-				correct[j] = 1.0 / math32.Sqrt(a[j])
+				correct[j] = 1.0 / math32.MobileSqrt(a[j])
 			}
 			InvSqrt(a)
 			assert.Equal(correct[1:], a[1:], "i = %d, %v", i, Range(0, i))

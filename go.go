@@ -48,13 +48,13 @@ func Div(a, b []float32) {
 // Sqrt performs √a̅ elementwise. a̅ will be clobbered
 func Sqrt(a []float32) {
 	for i, v := range a {
-		a[i] = math32.Sqrt(v)
+		a[i] = math32.MobileSqrt(v)
 	}
 }
 
 // InvSqrt performs 1/√a̅ elementwise. a̅ will be clobbered
 func InvSqrt(a []float32) {
 	for i, v := range a {
-		a[i] = float32(1) / math32.Sqrt(v)
+		a[i] = float32(1) / math32.MobileSqrt(v)
 	}
 }
